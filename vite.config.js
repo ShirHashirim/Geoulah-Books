@@ -26,23 +26,21 @@ export default defineConfig({
      }
     },
 
-    // CSS code splitting
-    cssCodeSplit: true,
-
-    // Chunk size warnings
-    chunkSizeWarningLimit: 500,
-
-    // Asset file names
-    assetsDir: 'assets',
-
-    // Minify options
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
+   output: {
+  // Manual chunks for better caching
+  // manualChunks: {
+  //   vendor: []
+  // },
+  cssCodeSplit: true,
+  chunkSizeWarningLimit: 500,
+  assetsDir: 'assets',
+  terserOptions: {
+    compress: {
+      drop_console: true,
+      drop_debugger: true
     }
-  },
+  }
+},
 
   // Development server configuration
   server: {
