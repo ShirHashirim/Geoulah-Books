@@ -5,7 +5,8 @@
 
 export class BookService {
   constructor() {
-    this.baseUrl = '/Geoulah-Books/data';
+    // Use Vite's base URL - automatically handles dev vs production
+    this.baseUrl = `${import.meta.env.BASE_URL}data`;
     this.cache = new Map();
     this.cacheExpiry = 5 * 60 * 1000; // 5 minutes
   }
