@@ -1,28 +1,46 @@
-/**
- * Main JavaScript Entry Point
- * Initializes the application and loads page-specific components
- */
-
+//src/js/main.js
 import app from './core/app.js';
-import { BookCatalog } from './components/book-catalog.js';
 import { Header } from './components/header.js';
+import { BookCatalog } from './components/book-catalog.js';
+import { i18n } from './core/i18n.js';
 
-// Initialize header component (present on all pages)
-const headerElement = document.querySelector('.site-header');
-if (headerElement) {
-  new Header(headerElement, app);
-}
+// Initialize Components
+const header = new Header(document.querySelector('.site-header'), app);
+const catalog = new BookCatalog(document.querySelector('#book-grid'), app);
 
-// Initialize page-specific components based on current page
-const currentPage = window.location.pathname;
+// Load Data
+async function init() {
+  try {
+    const books = await app.services.books.getAll();
+    const currentLang = app.getState().currentLanguage;
 
-if (currentPage === '/' || currentPage === '/index.html' || currentPage.endsWith('/Geoulah-Books/')) {
-  // Home page - initialize book catalog
-  const catalogElement = document.querySelector('.books-catalog');
-  if (catalogElement) {
-    new BookCatalog(catalogElement, app);
+    // Render Hero (Featured Book)
+    const featuredBook = books.find(b => b.featured);
+    if (featuredBook) {
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        // FIXED: Relative link for the button
+        heroContent.innerHTML = `
+          <h1>${featuredBook.title[currentLang]}</h1>
+          <p>${featuredBook.description[currentLang]}</p>
+          <a href="book.html?id=${featuredBook.slug}" class="btn-primary">
+            ${i18n.t('startReading')}
+          </a>
+        `;
+      }
+    }
+
+    // Render Catalog
+    catalog.render(books);
+
+  } catch (error) {
+    console.error('App init failed:', error);
   }
 }
 
-// Log initialization
-console.log('Geoulah Books initialized');
+// Event Listeners for Language Change
+document.addEventListener('app:languageChange', () => {
+  init(); // Re-render content
+});
+
+init();
