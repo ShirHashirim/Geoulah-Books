@@ -1,0 +1,33 @@
+/**
+ * Main CSS Entry Point
+ * Imports all CSS modules in correct order
+ */
+
+/* ========================================
+   1. BASE STYLES (Foundation)
+   ======================================== */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/typography.css';
+
+/* ========================================
+   2. COMPONENTS (Reusable UI elements)
+   ======================================== */
+@import './components/header.css';
+@import './components/footer.css';
+@import './components/buttons.css';
+@import './components/book-card.css';
+@import './components/loading.css';
+
+/* ========================================
+   3. LAYOUTS (Page-specific layouts)
+   ======================================== */
+@import './layouts/home.css';
+@import './layouts/book.css';
+@import './layouts/chapter.css';
+
+/* ========================================
+   4. UTILITIES (Helper classes)
+   ======================================== */
+@import './utilities/accessibility.css';
+@import './utilities/responsive.css';

@@ -1,0 +1,322 @@
+/**
+ * Typography System
+ * Font loading and typographic styles
+ */
+
+/* ========================================
+   Font Face Declarations (Self-hosted fonts)
+   Note: Update paths when fonts are available
+   ======================================== */
+
+/* Heebo (Hebrew) - Variable Font */
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/heebo-variable.woff2') format('woff2-variations');
+  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F, U+0000-00FF;
+}
+
+/* Inter (French/Latin) - Variable Font */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/inter-variable.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ========================================
+   Heading Styles
+   ======================================== */
+h1,
+.h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.01em;
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  margin-bottom: var(--space-sm);
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  margin-bottom: var(--space-sm);
+}
+
+h5,
+.h5 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--space-xs);
+}
+
+h6,
+.h6 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--space-xs);
+}
+
+/* ========================================
+   Paragraph Styles
+   ======================================== */
+p {
+  margin-bottom: var(--space-md);
+  line-height: var(--line-height-relaxed);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.lead {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-medium);
+}
+
+.small {
+  font-size: var(--font-size-sm);
+}
+
+.text-muted {
+  color: var(--color-text-medium);
+}
+
+/* ========================================
+   Blockquote
+   ======================================== */
+blockquote {
+  position: relative;
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0;
+  border-inline-start: 4px solid var(--color-primary);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-md);
+  font-style: italic;
+  color: var(--color-text-medium);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-style: normal;
+  color: var(--color-text-light);
+}
+
+blockquote cite::before {
+  content: "— ";
+}
+
+/* ========================================
+   Lists
+   ======================================== */
+ul,
+ol {
+  margin-bottom: var(--space-md);
+  padding-inline-start: var(--space-lg);
+}
+
+li {
+  margin-bottom: var(--space-xs);
+  line-height: var(--line-height-relaxed);
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+/* Definition Lists */
+dl {
+  margin-bottom: var(--space-md);
+}
+
+dt {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2xs);
+}
+
+dd {
+  margin-bottom: var(--space-sm);
+  margin-inline-start: var(--space-lg);
+  color: var(--color-text-medium);
+}
+
+/* ========================================
+   Inline Elements
+   ======================================== */
+strong,
+b {
+  font-weight: var(--font-weight-bold);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+mark {
+  background-color: hsl(50, 100%, 80%);
+  padding: 0.125em 0.25em;
+  border-radius: var(--radius-sm);
+}
+
+code {
+  padding: 0.125em 0.375em;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9em;
+  color: var(--color-error);
+}
+
+pre {
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  line-height: var(--line-height-base);
+}
+
+pre code {
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+kbd {
+  padding: 0.125em 0.375em;
+  background-color: var(--color-text);
+  color: var(--color-text-inverse);
+  border-radius: var(--radius-sm);
+  font-size: 0.875em;
+  font-family: var(--font-mono);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   Horizontal Rule
+   ======================================== */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-border);
+  margin: var(--space-xl) 0;
+}
+
+/* ========================================
+   Text Utilities
+   ======================================== */
+.text-center {
+  text-align: center;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.font-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.not-italic {
+  font-style: normal;
+}
+
+/* ========================================
+   RTL/LTR Specific Typography
+   ======================================== */
+html[dir="rtl"] {
+  letter-spacing: 0;
+}
+
+html[dir="rtl"] .text-uppercase {
+  letter-spacing: 0;
+}
+
+/* ========================================
+   Selection
+   ======================================== */
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-text);
+}
+
+::-moz-selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-text);
+}

@@ -1,0 +1,93 @@
+/**
+ * Chapter Reading Page Layout
+ */
+
+.chapter-page {
+  padding: var(--space-2xl) 0;
+}
+
+.chapter-container {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.chapter-header {
+  margin-bottom: var(--space-xl);
+}
+
+.chapter-title {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-sm);
+}
+
+.chapter-meta {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-medium);
+}
+
+.chapter-content {
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-md);
+}
+
+.chapter-content p {
+  margin-bottom: var(--space-md);
+}
+
+.chapter-content h2 {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.chapter-content h3 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.chapter-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  flex: 1;
+}
+
+.nav-btn:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.nav-btn-prev {
+  justify-content: flex-start;
+}
+
+.nav-btn-next {
+  justify-content: flex-end;
+}
+
+.nav-btn-toc {
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .chapter-navigation {
+    flex-direction: column;
+  }
+}
