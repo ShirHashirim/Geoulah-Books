@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(where python python3 node php)",
+      "Bash(timeout 2 bash:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(cat:*)",
+      "Bash(git push:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "ספרי גאולה - Geoulah Books",
+  "short_name": "Geoulah Books",
+  "description": "ספרים המאירים את דרך הגאולה",
+  "start_url": "/Geoulah-Books/",
+  "scope": "/Geoulah-Books/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "lang": "he",
+  "dir": "rtl",
+  "icons": [],
+  "categories": ["books", "education", "religion"]
+}

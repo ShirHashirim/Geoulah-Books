@@ -1,0 +1,446 @@
+/* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain) */
+
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+        display: block;
+}
+
+body {
+        line-height: 1;
+}
+ol, ul {
+        list-style: none;
+}
+blockquote, q {
+        quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+        content: '';
+        content: none;
+}
+table {
+        border-collapse: collapse;
+        border-spacing: 0;
+}
+
+/*** body, conteneur ***/
+
+body {
+	background-color: #f4f3ef;
+	color: #333;
+	text-align: center;
+	font-family: Georgia, Times, "Nimbus Roman No9 L", serif ;
+	font-size: 1.1em;
+	line-height: 1.1em;	
+}
+
+img {
+	border: 0px;
+}
+
+#conteneur {
+	width: 830px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+}
+
+/*p {
+	margin-bottom: 0.8em;
+}
+
+blockquote {
+	margin-bottom: 0.8em;	
+}*/
+
+/*** header ***/
+#header {
+	background: #f4f3ef url(../images/header.jpg) 0 0 no-repeat;
+	width: 800px;
+	height: 476px;
+	margin-top: 5px;
+}
+
+#header h1 {
+	text-indent: -5000px;
+	width: 436px;
+	height: 38px;
+	position: relative;
+	left: 364px;
+	top: 210px;
+}
+
+#langue a {
+	position: absolute;
+	right: -150px;
+	/*padding-top:3px;*/
+	top: 0;
+	background: transparent url(../images/he_25.jpeg) right no-repeat;
+	height: 30px;
+	width: 90px;
+	text-decoration: none;
+	color:#333;
+}
+
+#langue a span {
+	margin-top: 4px;
+	display: block;
+}
+/**** contenu ***/
+#contenu {	
+	margin: -210px 0 0 360px ;
+	padding: 5px 0px 10px 10px;
+	width: 400px;
+}
+
+p, blockquote {
+	padding: 0 10px;
+}
+
+#contenu p {
+	margin: 10px 0;
+	font-size: 1.2em;
+}
+
+#contenu ul {
+	width: 330px;
+}
+
+#contenu ul li {
+	margin-bottom: 10px;
+}
+
+#contenu a span {
+	/*color: red;*/
+	font-size: 1em;
+	font-weight: bold;
+	font-style: normal;	
+}
+
+#contenu a {
+	margin: 0 2px;
+	display: block;
+	width: 312px;
+	text-align: center;
+	text-decoration: none;
+	background-color: #e2e1cc;
+	color: inherit;
+	border: 1px solid gray;
+	font-size: 0.9em;
+	line-height: 30px;
+}
+
+#contenu a:hover { 
+	background: #746d51;
+	color: #fff;
+	border: 1px solid gray; 
+}
+
+#payment {
+	margin-top: 170px;
+}
+
+/**** invit ****/
+#invit {
+	margin-top: 110px;
+}
+
+#invit  p
+{
+	margin: 10px ;	
+	font-size: 1.1em;
+}
+
+.pays {
+	padding-top: 148px;
+}
+
+.ecrire {
+	padding-top: 87px;
+}
+
+/************ achat ***************/
+#achat {
+	width: 200px;
+	height: 180px;
+	background-color: #8f8763;	
+	position: absolute;
+	top: 477px;
+	left: 70px ;
+}
+
+#achat p {
+	font-size: 14px;
+	color: #f1e823;
+	text-align: left;
+	margin-top: 20px;
+	margin-left: 107px;
+	width: 180px;
+}
+
+#achat img {
+	float: left;	
+	padding-left: 8px;
+}
+
+#achat h3 {
+	background-color: #8f8763;
+	background-image: none;
+	color: #f1e823;
+	font-size: 1em;	
+	text-align: center;
+}
+
+ 
+
+/*#achat #prix {
+	color: #fff;
+}*/
+
+#achat #prix {		
+		padding-top: 20px;
+		margin-bottom: -20px;
+		color: #fff;
+}
+
+#achat #prix2 {		
+		color: #fff;
+}
+
+#achat a {
+	padding: 0;
+	text-decoration: none;
+	width: 200px;	
+	margin: 0 ;
+	background-color: #8f8763;
+	border: 0;
+}
+
+#achat a:hover {
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	background-color: #8f8763;	
+	color: #f1e823;
+	border: 0; 
+}
+/*** retour ***/
+#achat #retour {	
+	margin-top: 132px;
+	margin-left: 0px;
+	width: 200px;
+	padding: 0;
+}
+
+#retour a {
+	text-decoration: none;
+	background: #ead66e url(../images/fond_retour.gif) repeat-y;
+	color: #bf9e45;
+	padding: 1px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+#retour a:hover {
+	text-decoration: none;
+	background: #c6a447 url(../images/fond_hover.gif) repeat-y;
+	color: #fdf7dd;
+}
+
+#retour_pay {
+	position: absolute;
+	top: 550px;
+	left: 60px ;
+	padding-bottom:15px;
+	padding-top: -8px;
+	background color: transparent;
+}
+
+#retour_pay a {
+	text-decoration: none;
+	background: #ead66e url(../images/fond_retour.gif) repeat-y;
+	color: #bf9e45;
+	padding: 0 3px;
+	font-size: 0.85em;
+	font-weight: bold;
+	border: 0;
+	width: 200px;	
+}
+
+#retour_pay a:hover {
+	text-decoration: none;
+	background: #c6a447 url(../images/fond_hover.gif) repeat-y;
+	color: #fdf7dd;
+	border: 0;
+	font-weight: bold;
+	font-size: 0.85em;
+}
+
+/**** Inscription ***/
+#inscription, #inscription2 {
+	position: absolute;
+	width: 430px;
+	top: 477px;
+	left: 370px;	
+	background-color: #e2e1cc;
+}
+
+#inscription a {
+	border: 1px solid gray;
+	text-decoration: none;	
+}
+
+#inscription h3, #inscription2 h3 {
+	font-family: sans-serif;
+	font-size:1.6em;
+	text-align: center;
+	background-color:#8f8763;
+	color: #fff;	
+	padding: 5px 0 9px 0; /* Je ne sais pas pourquoi le titre n'est pas centré verticalement */
+	margin-bottom: 10px;
+}
+
+#inscription2 label {
+	display: block;
+	width: 150px;
+	float: left;
+	margin-left: 15px;
+	margin-bottom: 5px;	
+}
+
+#inscription2 input {
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+#inscription2 input, #inscription2 label {
+	margin-bottom: 10px;
+	margin-left: 5px;	
+}
+
+/*** invit2 ***/
+#invit2 {
+	position: absolute;
+	top: 750px;
+}
+
+#invit2  p
+{
+	margin: 10px ;
+	text-align: center;
+	font-size: 1.15em;
+}
+
+#invit2 a {
+	margin: 0 25px;
+	display: block;
+	width: 312px;
+	text-align: center;
+	text-decoration: none;
+	background-color: #e2e1cc;
+	color: inherit;
+	border: 1px solid gray;
+	font-size: 1.1em;
+	line-height: 30px;	
+}
+
+#invit2 a:hover { 
+	background: #746d51;
+	color: #fff;
+	border: 1px solid gray; 
+} 
+
+#inscription input, #inscription label {
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+.erreur {
+	color: red;	
+}
+
+/*** Réponses ***/
+#reponses {	
+	width: 420px;
+	background-color: #b5a981;
+	font-family: sans-serif;
+	font-size: 0.85em;
+	margin-top: 25px;
+	margin-left: -5px;
+	margin-bottom: 25px;
+	padding: 1px 0;	
+	color: #fff;
+}
+
+#coordonnees_bank {	
+	width: 420px;
+	background-color: #b5a981;
+	font-family: sans-serif;
+	font-size: 0.85em;
+	margin-top: 150px;
+	margin-left: -5px;
+	margin-bottom: 25px;
+	padding: 1px 0;	
+	color: #fff;
+}
+
+#reponses p {
+	margin: 8px 0 8px 5px;
+	padding: 0;
+}
+
+#reponses span {
+	font-style: normal;
+	font-weight: normal;	
+	display: block;
+	float: right;
+	width: 200px;
+	margin: 0;
+	padding: 0;
+}
+
+#reponses #prix, #reponses #prix span {
+	font-weight: bold;
+}
+
+#cheque_virement {
+	margin-top : 377px;
+}
+
+/***** divers éléments ***/
+textarea {
+	width: 400px;
+	margin-left: -10px;
+	margin-bottom: 5px;
+	margin-top: 55px;
+	background-color: #f7f7f6;
+	font-family: sans-serif;
+	font-size: 14px;
+	color: #333;
+	padding: 7px;
+	border-left: 13px solid #c6a53e;
+	border-right: 13px solid #c6a53e;
+	border-bottom: 1px solid #ccc5ad;
+}

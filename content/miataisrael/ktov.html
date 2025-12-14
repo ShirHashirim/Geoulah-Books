@@ -1,0 +1,69 @@
+﻿<?php
+session_start();
+?>
+
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="he" lang="he" dir="rtl">
+
+<head>
+	<title>?מי אתה ישראל</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="גאולה, אלוהים, יהוה,תנך, מקרא, ישראל, ישועה, הצלה,נביא, נביאים, אחרית הימים, סוף העולם, חבלי משיח">
+	<link rel="stylesheet" type="text/css" media="screen" href="style/present_h.css">
+</head>
+
+<body>
+	<div id="container">
+		
+		<div id="header">
+			<h1>כתוב לנו</h1>
+		</div>
+		<div id="content">
+		    
+		    <div id="invit">
+				<p>נא מלא את הפרטים וכתוב את מסרך בריבוע (300 תווים מקסימום)</p>				
+			</div>
+		    
+		    <div id="inscription">
+		        <h3>פרטים</h3>
+			    <!--<form method="post" action="https://www.geoulah.org/cgi-bin/cgiemail/miataisrael/template.txt">-->
+			    <!--<form method="post" action="https://miataisrael.geoulah.org:2080/rpc/addressbooks/doar@miataisrael.geoulah.org/contacts~19299a28-5714-967c-ab7d-311e82836885">-->
+			    <form method="post" action="https://www.geoulah.org/miataisrael/commentaires.php">
+    			    <label>שם פרטי:</label><input type="text" name="prenom"><br>
+    				<label>שם משפחה:</label><input type="text" name="nom"><br>
+    				<label>טלפון:</label><input type="text" name="telephone"> <br>
+    			    <label>כתובת דוא"ל :</label><br><input name="ad_electronique" size="39" maxlength="38" tabindex="50"><br>
+    				<fieldset id="message">
+    					<textarea name="commentaires" rows="12" cols="59" maxlength="300">
+    					</textarea>
+                        <input type="submit" value="שלח">
+    				</fieldset>			
+    			</form>
+			</div>
+			<div id="menus">
+				<div id="passages">
+					<h3>תקציר</h3>
+					<ul>
+					<li><a href="book.html?id=miataisrael">עמוד הבית</a></li>
+					<li><a href="chapter.html?book=miataisrael&chapter=mavo">מבוא</a></li>
+					<li><a href="chapter.html?book=miataisrael&chapter=tanakh">קיצור תולדות התנ"ך</a></li>
+					<li><a href="chapter.html?book=miataisrael&chapter=golah">הגולה</a></li>
+					<li><a href="chapter.html?book=miataisrael&chapter=shivah">ישראל, השיבה</a></li>
+					<li><a href="chapter.html?book=miataisrael&chapter=goyim">הגויים</a></li>				
+				</ul>
+			
+			</div>
+			<div id="practical">
+				<h3>קשרים שימושיים</h3>
+				<ul>				
+				<li><a href="purchase.html">קנייה</a></li>
+				<li><a href="contact.html">כתוב לנו</a></li>
+				<li><a href="#">קשרים</a></li>				
+				</ul>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

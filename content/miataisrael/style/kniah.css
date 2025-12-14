@@ -1,0 +1,288 @@
+/* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain) */
+
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+        display: block;
+}
+
+body {
+        line-height: 1;
+}
+ol, ul {
+        list-style: none;
+}
+blockquote, q {
+        quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+        content: '';
+        content: none;
+}
+table {
+        border-collapse: collapse;
+        border-spacing: 0;
+}
+
+/*** body, conteneur ***/
+body {
+	background-color: #f4f3ef;
+	color: #333;
+	text-align: center;
+	font-family: david, "frank ruehl", Times, serif ;
+	font-size: 1.1em;
+	line-height: 1.2em;
+}
+
+img {
+	border: 0px;
+}
+
+#container {
+	width: 830px;
+	margin: 0 auto;
+	text-align: right;
+	position: relative;
+}
+
+/*p, blockquote, span {
+	margin-bottom: 0.8em;
+	
+}
+
+span {
+	font-family: serif;
+	font-size: 1.15em;
+}*/
+/*** header ***/
+#header {
+	background: #f4f3ef url(../images/header.jpg) 0 0 no-repeat;
+	width: 800px;
+	height: 476px;
+	margin-top: 5px;
+}
+
+#header h1 {
+	text-indent: -5000px;
+	width: 436px;
+	height: 38px;
+	position: relative;
+	right: 364px;
+	top: 210px;	
+}
+
+#header #slogan {
+	position: absolute;
+	top: 20px;
+	left: 5px;
+	height: 160px;
+	width: 160px;
+	text-align: left;
+	font-family: sans-serif;	
+	background: #f4f3ef url(../images/slogan.png) 0 0 no-repeat;
+	/*z-index: 10;
+	border: 1px solid blue;*/
+}
+
+#header #slogan p {
+	margin-left: -5000px;
+}
+
+#langue a {
+	position: absolute;
+	left: -150px;
+	/*padding-top:3px;*/
+	top: 0;
+	background: transparent url(../images/fr.png) left no-repeat;
+	height: 30px;
+	width: 90px;
+	text-decoration: none;
+	color:#333;
+}
+
+#langue a span {
+	margin-top: 4px;
+	display: block;
+}
+
+#langue a span span {
+	display: inline;
+	font-size: 90%;
+}
+
+/**** contenu ***/
+#contenu {
+	margin: -210px 360px 0 0;
+	padding: 5px 20px 10px 5px;
+	width: 400px;
+}
+
+/*#contenu span {
+	font-weight: bold;
+	font-size: 1.2em;
+}*/
+
+p, blockquote {
+	padding: 0 10px;
+}
+
+/**** invit ****/
+#invit {
+	margin-top: 110px;
+}
+
+#invit  p
+{
+	margin: 10px ;	
+	font-size: 1.1em;
+}
+
+/**** sale ***/
+#sale {
+	width: 200px;
+	height: 180px;
+	background-color: #8f8763;	
+	position: absolute;
+	top: 480px;
+	right: 70px ;	
+}
+
+#sale p {
+	font-size: 16px;
+	color: #f1e823;
+	text-align: right;
+	margin-top: 40px;
+	width: 180px;
+}
+
+#sale img {
+	float: left;	
+	padding-left: 4px;
+}
+
+#sale h3 {
+	background-color: #8f8763;
+	background-image: none;
+	color: #f1e823;
+	font-size: 1.15em;
+	text-align: center;	
+}
+
+#sale a {
+	padding: 0;
+	text-decoration: none;
+}
+
+#sale #price {
+	color: #fff;
+}
+
+/**** Retour ****/
+
+#sale #retour {	
+	margin-top: 100px;
+}
+
+#retour a {
+	text-decoration: none;
+	background: #ead66e url(../images/fond_retour.gif) repeat-y;
+	color: #bf9e45;
+	padding: 5px 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+#retour a:hover {
+	text-decoration: none;
+	background: #c6a447 url(../images/fond_hover.gif) repeat-y;
+	color: #fdf7dd;
+	padding: 5px 10px;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+/**** knissah ***/
+#inscription {
+	position: absolute;
+	width: 430px;
+	top: 477px;
+	right: 370px;	
+	background-color: #e2e1cc;
+}
+
+#inscription a {
+	border: 1px solid gray;
+	text-decoration: none;	
+}
+
+#inscription h3 {
+	font-family: sans-serif;
+	font-size:1.7em;
+	text-align: center;
+	background-color:#8f8763;
+	color: #fff;	
+	padding: 5px 0 9px 0; /* Je ne sais pas pourquoi le titre n'est pas centré verticalement */
+	margin-bottom: 10px;
+}
+
+#inscription input, #inscription label {
+	margin-bottom: 10px;
+	margin-right: 5px;
+}
+
+/*** invit2 ***/
+#invit2 {
+	position: absolute;
+	top: 750px;
+}
+
+#invit2  p
+{
+	margin: 10px ;
+	text-align: center;
+	font-size: 1.15em;
+}
+
+#invit2 a {
+	margin: 0 25px;
+	display: block;
+	width: 312px;
+	text-align: center;
+	text-decoration: none;
+	background-color: #e2e1cc;
+	color: inherit;
+	border: 1px solid gray;
+	font-size: 1.2em;
+	line-height: 30px;	
+}
+
+#invit2 a:hover { 
+	background: #746d51;
+	color: #fff;
+	border: 1px solid gray; 
+} 
+
+.erreur {
+	color: red;	
+}
