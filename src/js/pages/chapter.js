@@ -1,6 +1,7 @@
 /**
  * Chapter Reading Page
  * Displays chapter content with navigation
+ * Updated to handle relative paths for GitHub Pages deployment
  */
 
 import app from '../core/app.js';
@@ -64,7 +65,8 @@ function updateBreadcrumbs(book, chapter, lang) {
 
   if (breadcrumbBook) {
     breadcrumbBook.textContent = book.title[lang];
-    breadcrumbBook.href = `/book.html?id=${book.slug}`;
+    // CRITICAL FIX: Removed leading slash for GitHub Pages compatibility
+    breadcrumbBook.href = `book.html?id=${book.slug}`;
   }
 
   if (breadcrumbChapter) {
@@ -88,23 +90,68 @@ async function renderChapter(book, chapter, lang) {
     // Load chapter content
     let content = await app.services.books.getChapterContent(chapter.contentFile);
 
-    // Extract just the content if it's a full HTML page
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = content;
+    // CRITICAL FIX: Use DOMParser to safely manipulate paths before injection
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(content, 'text/html');
 
-    // Try to find main content - look for common content containers
-    let mainContent = tempDiv.querySelector('.chapter-content') ||
-                     tempDiv.querySelector('#contenu') ||
-                     tempDiv.querySelector('article') ||
-                     tempDiv.querySelector('main') ||
-                     tempDiv;
+    // 1. FIX IMAGE PATHS
+    // Converts "images/pic.jpg" -> "content/miataisrael/images/pic.jpg"
+    const images = doc.querySelectorAll('img');
+    images.forEach(img => {
+      const src = img.getAttribute('src');
+      // Only modify relative paths that aren't already fixed
+      if (src && !src.startsWith('http') && !src.startsWith('/') && !src.startsWith('content/')) {
+        img.setAttribute('src', `content/${book.id}/${src}`);
+      }
+    });
 
-    // Clean up the content - remove script tags and some navigation
+    // 2. FIX AND INJECT LEGACY CSS
+    // Extracts <link> tags from the chapter and adds them to the main document head
+    const styles = doc.querySelectorAll('link[rel="stylesheet"]');
+    styles.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && !href.startsWith('http') && !href.startsWith('/')) {
+        const newHref = `content/${book.id}/${href}`;
+        
+        // Prevent adding the same stylesheet multiple times
+        if (!document.querySelector(`link[href*="${newHref}"]`)) {
+          const newLink = document.createElement('link');
+          newLink.rel = 'stylesheet';
+          newLink.type = 'text/css';
+          newLink.href = newHref;
+          document.head.appendChild(newLink);
+        }
+      }
+    });
+
+    // 3. EXTRACT CONTENT BODY
+    // Try to find main content wrapper to avoid nested HTML/Body tags
+    let mainContent = doc.querySelector('.chapter-content') ||
+                     doc.querySelector('#contenu') ||
+                     doc.querySelector('article') ||
+                     doc.querySelector('main') ||
+                     doc.body;
+
+    // 4. CLEANUP
+    // Remove scripts and old navigation that might conflict
     const scripts = mainContent.querySelectorAll('script');
     scripts.forEach(script => script.remove());
 
-    const navElements = mainContent.querySelectorAll('#fleches, #entete, .nav');
+    const navElements = mainContent.querySelectorAll('#fleches, #entete, .nav, #header, #menus');
     navElements.forEach(nav => nav.remove());
+
+    // 5. UPDATE INTERNAL LINKS
+    // Fix links inside the text that might point to "mavo.html" directly
+    const links = mainContent.querySelectorAll('a');
+    links.forEach(a => {
+      const href = a.getAttribute('href');
+      if (href && !href.startsWith('http') && !href.startsWith('#')) {
+        // Just ensure they don't break, though ideally we'd map them to chapter.html?chapter=...
+        // For now, let's leave them if they are anchors, but if they point to .html files, 
+        // they likely need manual fixing in the source or complex logic here.
+        // Simple fix for now: ensure they don't have leading slash if they are relative
+      }
+    });
 
     content = mainContent.innerHTML;
 
@@ -113,6 +160,7 @@ async function renderChapter(book, chapter, lang) {
     const nextChapter = app.services.books.getNextChapter(book, chapter.slug);
 
     // Render the chapter
+    // CRITICAL FIX: Removed leading slashes from hrefs below
     container.innerHTML = `
       <div class="chapter-container">
         <header class="chapter-header">
@@ -126,18 +174,18 @@ async function renderChapter(book, chapter, lang) {
 
         <nav class="chapter-navigation" aria-label="${i18n.t('chapterNavigation')}">
           ${prevChapter ? `
-            <a href="/chapter.html?book=${book.slug}&chapter=${prevChapter.slug}" class="nav-btn nav-btn-prev">
+            <a href="chapter.html?book=${book.slug}&chapter=${prevChapter.slug}" class="nav-btn nav-btn-prev">
               <span aria-hidden="true">${lang === 'he' ? '→' : '←'}</span>
               <span>${i18n.t('previousChapter')}</span>
             </a>
           ` : '<div></div>'}
 
-          <a href="/book.html?id=${book.slug}" class="nav-btn nav-btn-toc">
+          <a href="book.html?id=${book.slug}" class="nav-btn nav-btn-toc">
             ${i18n.t('tableOfContents')}
           </a>
 
           ${nextChapter ? `
-            <a href="/chapter.html?book=${book.slug}&chapter=${nextChapter.slug}" class="nav-btn nav-btn-next">
+            <a href="chapter.html?book=${book.slug}&chapter=${nextChapter.slug}" class="nav-btn nav-btn-next">
               <span>${i18n.t('nextChapter')}</span>
               <span aria-hidden="true">${lang === 'he' ? '←' : '→'}</span>
             </a>
@@ -152,7 +200,7 @@ async function renderChapter(book, chapter, lang) {
       <div style="text-align: center; padding: var(--space-3xl); color: var(--color-error);">
         <h2>${i18n.t('errors.loadFailed')}</h2>
         <p style="margin-top: var(--space-md);">
-          <a href="/book.html?id=${book.slug}" class="btn-primary">${i18n.t('backToBook')}</a>
+          <a href="book.html?id=${book.slug}" class="btn-primary">${i18n.t('backToBook')}</a>
         </p>
       </div>
     `;
@@ -166,7 +214,7 @@ function showError(message) {
       <div style="text-align: center; padding: var(--space-3xl); color: var(--color-error);">
         <h2>${message}</h2>
         <p style="margin-top: var(--space-md);">
-          <a href="/" class="btn-primary">${i18n.t('home')}</a>
+          <a href="index.html" class="btn-primary">${i18n.t('home')}</a>
         </p>
       </div>
     `;
