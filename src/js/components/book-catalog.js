@@ -116,7 +116,7 @@ export class BookCatalog {
             </div>
           ` : ''}
         </div>
-        <a href="/book.html?id=${book.slug}" class="btn-primary" style="display: inline-block;">
+        <a href="book.html?id=${book.slug}" class="btn-primary" style="display: inline-block;">
           ${i18n.t('readMore')}
         </a>
       </div>
@@ -168,7 +168,7 @@ export class BookCatalog {
               <span class="book-card__price">${book.price} ${book.currency || '₪'}</span>
             ` : ''}
             <a
-              href="/book.html?id=${book.slug}"
+              href="book.html?id=${book.slug}"
               class="btn-secondary btn-sm"
               aria-label="${i18n.t('viewDetails')} - ${this.escapeHtml(book.title[lang])}"
             >

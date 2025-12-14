@@ -124,7 +124,7 @@ function renderBookDetails(book, lang) {
         </div>
 
         <div style="display: flex; gap: var(--space-md); margin-top: var(--space-lg); flex-wrap: wrap;">
-          <a href="/purchase.html?book=${book.slug}" class="btn-primary">
+          <a href="purchase.html?book=${book.slug}" class="btn-primary">
             ${i18n.t('buyNow')}
           </a>
           <a href="/" class="btn-secondary">
@@ -140,7 +140,7 @@ function renderBookDetails(book, lang) {
         <ul class="toc-list" role="list">
           ${book.chapters.map((chapter, index) => `
             <li class="toc-item" role="listitem">
-              <a href="/chapter.html?book=${book.slug}&chapter=${chapter.slug}">
+              <a href="chapter.html?book=${book.slug}&chapter=${chapter.slug}">
                 <span class="chapter-number">${index + 1}</span>
                 <span class="chapter-title-text">${escapeHtml(chapter.title[lang])}</span>
               </a>
