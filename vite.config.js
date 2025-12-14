@@ -81,8 +81,9 @@ export default defineConfig({
   // Environment variables
   envPrefix: 'VITE_',
 
-  // Base public path
-  base: './',
+  // Base public path for GitHub Pages
+  // Use '/Geoulah-Books/' for production, './' for local dev
+  base: process.env.NODE_ENV === 'production' ? '/Geoulah-Books/' : './',
 
   // Plugin configuration (placeholder for future plugins)
   plugins: []
