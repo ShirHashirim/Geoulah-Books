@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ספרי גאולה - ספרים המאירים את דרך הגאולה">
+    <meta name="keywords" content="ספרים, גאולה, ישראל, יהדות, מי אתה ישראל">
+    <title>ספרי גאולה - Geoulah Books</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/site/favicon.png">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="ספרי גאולה - Geoulah Books">
+    <meta property="og:description" content="ספרים המאירים את דרך הגאולה">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/geoulah-books/">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">ספרי גאולה</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="#books">ספרים</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                    <li class="lang-switch">
+                        <a href="#" data-lang="he" class="active">עברית</a>
+                        <a href="#" data-lang="fr">Français</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="תפריט">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>ספרי גאולה</h1>
+                <p class="tagline">ספרים המאירים את דרך הגאולה</p>
+            </div>
+        </section>
+
+        <!-- Featured Book Section (populated by JavaScript) -->
+        <section class="featured-book">
+            <!-- Content loaded by js/bookCatalog.js -->
+        </section>
+
+        <!-- All Books Grid -->
+        <section class="books-catalog" id="books">
+            <div class="container">
+                <h2>כל הספרים</h2>
+                <div class="books-grid">
+                    <!-- Content loaded by js/bookCatalog.js -->
+                    <p class="loading">טוען ספרים...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 ספרי גאולה. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Modules -->
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/bookCatalog.js"></script>
+</body>
+</html>

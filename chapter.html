@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="קריאת פרק - ספרי גאולה">
+    <title>פרק - ספרי גאולה</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/site/favicon.png">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="chapter-page">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">ספרי גאולה</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">בית</a></li>
+                    <li><a href="index.html#books">ספרים</a></li>
+                    <li><a href="about.html">אודות</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                    <li class="lang-switch">
+                        <a href="#" data-lang="he" class="active">עברית</a>
+                        <a href="#" data-lang="fr">Français</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="תפריט">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <article class="chapter">
+                <!-- Chapter Title (populated by JavaScript) -->
+                <h1 class="chapter-title"></h1>
+                
+                <!-- Chapter Content (loaded via JavaScript) -->
+                <div class="chapter-content">
+                    <p class="loading">טוען תוכן הפרק...</p>
+                </div>
+                
+                <!-- Chapter Navigation (populated by JavaScript) -->
+                <nav class="chapter-nav">
+                    <!-- Previous/Next chapter links loaded by JS -->
+                </nav>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 ספרי גאולה. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Modules -->
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/chapterView.js"></script>
+</body>
+</html>

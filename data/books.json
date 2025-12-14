@@ -1,0 +1,61 @@
+{
+  "books": [
+    {
+      "id": "miataisrael",
+      "slug": "miataisrael",
+      "title": {
+        "he": "מי אתה ישראל?",
+        "fr": "Qui es-tu Israël?"
+      },
+      "author": "גִלַלְיָה טיאר",
+      "description": {
+        "he": "שאלה גורלית שלא קיבלה עד היום תשובה הולמת. הספר מבשר את השגת התשובה בדורנו: 'ישראל, אתה עדיין אינך ישראל. אך הבשורה הגדולה והמשמחת היא, שאתה עומד בשחר התגלותך.'",
+        "fr": "Une question fatidique qui n'a pas encore reçu de réponse appropriée. Le livre annonce l'obtention de la réponse dans notre génération."
+      },
+      "quote": {
+        "he": "ישראל, בשעה זו, כאשר נכתבו מילים אלה, גאולתך כבר החלה. היא בניצניה, אך דבר לא יוכל לעוצרה עד שתגיע לשלמותה.",
+        "fr": "Israël, à cette heure, alors que ces mots ont été écrits, ta rédemption a déjà commencé."
+      },
+      "price": 80,
+      "currency": "ILS",
+      "pages": 274,
+      "cover": "images/books/miataisrael/cover.svg",
+      "featured": true,
+      "status": "available",
+      "publishedDate": "2020-01-01",
+      "isbn": "",
+      "chapters": [
+        {
+          "id": "mavo",
+          "title": { "he": "מבוא", "fr": "Introduction" },
+          "slug": "mavo",
+          "contentFile": "content/miataisrael/mavo.html"
+        },
+        {
+          "id": "tanakh",
+          "title": { "he": "קיצור תולדות התנ\"ך", "fr": "Histoire abrégée de la Bible" },
+          "slug": "tanakh",
+          "contentFile": "content/miataisrael/tanakh.html"
+        },
+        {
+          "id": "golah",
+          "title": { "he": "הגולה", "fr": "L'Exil" },
+          "slug": "golah",
+          "contentFile": "content/miataisrael/golah.html"
+        },
+        {
+          "id": "shivah",
+          "title": { "he": "ישראל, השיבה", "fr": "Israël, le Retour" },
+          "slug": "shivah",
+          "contentFile": "content/miataisrael/shivah.html"
+        },
+        {
+          "id": "goyim",
+          "title": { "he": "הגויים", "fr": "Les Nations" },
+          "slug": "goyim",
+          "contentFile": "content/miataisrael/goyim.html"
+        }
+      ]
+    }
+  ]
+}

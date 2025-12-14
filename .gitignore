@@ -1,0 +1,29 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node modules (if you add any dev tools later)
+node_modules/
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Build artifacts (if you add a build step later)
+dist/
+build/
+
+# Environment files
+.env
+.env.local
