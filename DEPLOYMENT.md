@@ -60,12 +60,12 @@ You can check the deployment status:
 
 Your site will be available at:
 ```
-https://YOUR_USERNAME.github.io/geoulah-books/
+https://github.com/ShirHashirim/Geoulah-Books/
 ```
 
-For example, if your username is `avicohen`, it would be:
+For example, if your username is `shirhashirim`, it would be:
 ```
-https://avicohen.github.io/geoulah-books/
+https://shirhashirim.github.io/geoulah-books/
 ```
 
 ## Custom Domain (Optional)

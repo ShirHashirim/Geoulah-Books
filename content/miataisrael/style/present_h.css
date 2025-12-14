@@ -1,0 +1,369 @@
+/* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain) */
+
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+        display: block;
+}
+
+body {
+        line-height: 1;
+}
+ol, ul {
+        list-style: none;
+}
+blockquote, q {
+        quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+        content: '';
+        content: none;
+}
+table {
+        border-collapse: collapse;
+        border-spacing: 0;
+}
+
+/*** body, conteneur ***/
+body {
+	background-color: #f4f3ef;
+	color: #333;
+	text-align: center;	
+}
+
+img {
+	border: 0px;
+}
+
+#container {
+	width: 830px;
+	margin: 0 auto;
+	text-align: right;
+	position: relative;
+	font-family: david, "frank ruehl", Times, serif ;
+	font-size: 1.1em;
+	line-height: 1.2em;	
+}
+
+p, blockquote {
+	margin-bottom: 0.8em;
+	
+}
+
+/*** header ***/
+#header {
+	background: #f4f3ef url(../images/header.jpg) 0 0 no-repeat;
+	width: 800px;
+	height: 476px;
+	margin-top: 5px;
+}
+
+#header h1 {
+	text-indent: -5000px;
+	width: 436px;
+	height: 38px;
+	position: relative;
+	right: 364px;
+	top: 210px;	
+}
+
+#header #slogan {
+	position: absolute;
+	top: 20px;
+	left: 5px;
+	height: 160px;
+	width: 160px;
+	text-align: left;
+	font-family: sans-serif;	
+	background: #f4f3ef url(../images/slogan.png) 0 0 no-repeat;
+	/*z-index: 10;
+	border: 1px solid blue;*/
+}
+
+#header #slogan p {
+	margin-left: -5000px;
+}
+
+#miata {
+	background: transparent url(../images/h1_miata.jpg) 0 0 no-repeat;
+}
+
+#mavo {
+	background: transparent url(../images/h1_mavo.jpg) 0 0 no-repeat;
+}
+
+#tanakh {
+	background: transparent url(../images/h1_toldot.jpg) 0 0 no-repeat;
+}
+
+#golah {
+	background: transparent url(../images/h1_golah.jpg) 0 0 no-repeat;
+}
+
+#shivah {
+	background: transparent url(../images/h1_shivah.jpg) 0 0 no-repeat;
+}
+
+#goyim {
+	background: transparent url(../images/h1_goyim.jpg) 0 0 no-repeat;
+}
+
+#ecrire {
+	background-color: transparent;
+}
+
+#langue a {
+	position: absolute;
+	left: -150px;
+	/*padding-top:3px;*/
+	top: 0;
+	background: transparent url(../images/fr.png) left no-repeat;
+	height: 30px;
+	width: 90px;
+	text-decoration: none;
+	color:#333;
+}
+
+#langue a span {
+	margin-top: 4px;
+	display: block;
+}
+
+#langue a span span {
+	display: inline;
+	font-size: 90%;
+}
+
+/**** contenu ***/
+#content {	
+	margin: -210px 360px 0 0;
+	padding: 5px 20px 10px 10px;
+	width: 400px;
+}
+
+#content em {
+	font-weight: bold;
+}
+
+.vers {
+	font-style: italic;
+}
+
+#author {
+	padding: 20px 10px 1px 0px;
+	border-top: 1px dotted /*#bcc1b3*/ #aaa;
+	width: 400px;	
+	color: #777;
+	font-size: 0.95em;
+}
+
+/**** invit ****/
+#invit {
+	margin-top: 50px;
+}
+
+#invit  p
+{
+	margin: 10px ;	
+	font-size: 1.1em;
+}
+
+/**** inscription ***/
+
+#inscription {
+	position: absolute;
+	width: 430px;
+	top: 415px;
+	right: 370px;	
+	background-color: #e2e1cc;
+}
+
+#inscription h3 {
+	font-family: sans-serif;
+	font-size:1.7em;
+	text-align: center;
+	background-color:#8f8763;
+	color: #fff;	
+	padding: 5px 0 9px 0; /* Je ne sais pas pourquoi le titre n'est pas centré verticalement */
+	margin-bottom: 10px;
+}
+
+#inscription input {
+	margin-bottom: 10px;
+	margin-right: 5px;
+}
+
+#inscription label {
+	display: block;
+	width: 125px;
+	float: right;
+	margin-right: 15px;
+	margin-bottom: 5px;	
+}
+
+/**** flèches ****/
+
+#fleches {
+	margin-top: 30px;
+	margin-left: 20px;	
+}
+
+#fleches span {
+	font: italic 1em  serif;
+	text-decoration: underline;	
+}
+
+#fleches a {
+	color: #7b7457;	
+}
+
+#fg a {
+	float: left;
+	background: transparent url(../images/f11g.gif) center top no-repeat;
+	height: 60px;	
+}
+
+#fg a:hover {
+	background: transparent url(../images/fg_hover.gif) center top no-repeat;
+	color: #e1a11b;	
+}
+
+#fg span {
+	display: block;
+	padding-top: 30px;
+	margin-left: -17px;
+}
+
+#fd a {
+	float: right;
+	background: transparent url(../images/f13d.gif) center top no-repeat;
+	height: 60px;		
+}
+
+
+#fd a:hover {
+	background: transparent url(../images/fd_hover.gif) center top no-repeat;
+	color: #e1a11b;	
+}
+
+#fd span {
+	display: block;
+	padding-top: 30px;	
+}
+
+/************ menus ***************/
+#menus {	
+	position: absolute;
+	top: 415px;
+	right: 70px ;
+		
+}
+
+#menus h3 {
+	background: #f4f3ef url(../images/menu_h3.gif) 0 0 no-repeat;
+	color: #fff;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	font-size: 1.15em;
+	font-weight: bold;
+	margin-bottom: -3px;	
+}
+
+#menus ul li {
+	width: 200px;
+	border-bottom: 1px solid #ccc5ad;		
+}
+
+#menus a {
+	display: block;
+	text-decoration: none;
+	background-color: #e2e1cc;
+	width: 192px;
+	height: 26px;
+	color: #3a362e;	
+	padding-right: 8px;
+	line-height: 26px;
+	font-size: 0.95em;
+}
+
+#menus a:hover, #menus a:focus {
+	background-color: #f4f3dc;
+	color: #796743;
+}
+
+#passages, #practical {
+	margin-bottom: 15px;	
+}
+
+#sale {
+	width: 200px;
+	height: 180px;
+	background-color: #8f8763;		
+}
+
+#sale p {
+	font-size: 16px;
+	color: #f1e823;
+	text-align: right;
+	margin-top: 40px;
+	width: 180px;
+}
+
+#sale img {
+	float: left;	
+	padding-left: 4px;
+}
+
+#sale h3 {
+	background-color: #8f8763;
+	background-image: none;
+	color: #f1e823;
+	font-size: 1.15em;	
+}
+
+#sale a {
+	padding: 0;
+}
+
+#sale #price {
+	color: #fff;
+}
+
+/**** texarea ***/
+
+textarea {
+	width: 400px;
+	/*margin-right: -18px;*/
+	margin-bottom: 5px;
+	background-color: #f7f7f6;
+	font-family: sans-serif;
+	font-size: 14px;
+	color: #333;
+	/*padding: 7px;*/
+	border-left: 13px solid #c6a53e;
+	border-right: 13px solid #c6a53e;
+	border-bottom: 1px solid #ccc5ad;
+	resize: none;
+}

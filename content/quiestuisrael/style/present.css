@@ -1,0 +1,313 @@
+/* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126 License: none (public domain) */
+
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+        display: block;
+}
+
+body {
+        line-height: 1;
+}
+ol, ul {
+        list-style: none;
+}
+blockquote, q {
+        quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+        content: '';
+        content: none;
+}
+table {
+        border-collapse: collapse;
+        border-spacing: 0;
+}
+
+/*** body, conteneur ***/
+
+body {
+	background-color: #f4f3ef;
+	color: #333;
+	text-align: center;
+	font-family: Georgia, Times, "Nimbus Roman No9 L", serif ;
+	font-size: 1.1em;
+	line-height: 1.1em;	
+}
+
+#conteneur {
+	width: 830px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+}
+
+p {
+	margin-bottom: 0.8em;
+}
+
+blockquote {
+	margin-bottom: 0.8em;	
+}
+
+
+/*** header ***/
+#header {
+	background: #f4f3ef url(../images/header.jpg) 0 0 no-repeat;
+	width: 800px;
+	height: 476px;
+	margin-top: 5px;
+}
+
+#header h1 {
+	text-indent: -5000px;
+	/*background: transparent url(../images/h1_qui3.jpg) 0 0 no-repeat;*/
+	width: 436px;
+	height: 38px;
+	position: relative;
+	left: 364px;
+	top: 210px;
+}
+
+#qui {
+	background: transparent url(../images/h1_qui3.jpg) 0 0 no-repeat;
+}
+
+#introduction {
+	background: transparent url(../images/h1_intro.jpg) 0 0 no-repeat;
+}
+
+#histoire {
+	background: transparent url(../images/h1_histoire.jpg) 0 0 no-repeat;
+}
+
+#exil {
+	background: transparent url(../images/h1_exil.jpg) 0 0 no-repeat;
+}
+
+#retour {
+	background: transparent url(../images/h1_retour.jpg) 0 0 no-repeat;
+}
+
+#nations {
+	background: transparent url(../images/h1_nations.jpg) 0 0 no-repeat;
+}
+
+#ecrire {
+	background-color: transparent;
+}
+
+#langue a {
+	position: absolute;
+	right: -150px;
+	/*padding-top:3px;*/
+	top: 0;
+	background: transparent url(../images/he_25.jpeg) right no-repeat;
+	height: 30px;
+	width: 90px;
+	text-decoration: none;
+	color:#333;
+}
+
+#langue a span {
+	margin-top: 4px;
+	display: block;
+}
+
+/**** contenu ***/
+#contenu {	
+	margin: -210px 0 0 360px ;
+	padding: 5px 0px 10px 10px;
+	width: 400px;
+}
+
+#contenu em {
+	font-weight: bold;
+}
+
+.vers {
+	font-style: italic;
+}
+
+#auteur {
+	padding: 20px 20px 0px 5px;
+	border-top: 1px dotted /*#bcc1b3*/ #aaa;
+	width: 400px;	
+	color: #777;
+	font-size: 0.95em;
+	margin-top: 20px;
+}
+
+/**** flèches ****/
+
+#fleches {
+	margin-top: 30px;
+	margin-left: 20px;	
+}
+
+#fleches span {
+	font: italic 13px  serif;
+	text-decoration: underline;	
+}
+
+#fleches a {
+	color: #7b7457;	
+}
+
+#fg a {
+	float: left;
+	background: transparent url(../images/f11g.gif) center top no-repeat;
+	height: 60px;	
+}
+
+#fg a:hover {
+	background: transparent url(../images/fg_hover.gif) center top no-repeat;
+	color: #e1a11b;	
+}
+
+#fg span {
+	display: block;
+	padding-top: 30px;	
+}
+
+#fd a {
+	float: right;
+	background: transparent url(../images/f13d.gif) center top no-repeat;
+	height: 60px;		
+}
+
+
+#fd a:hover {
+	background: transparent url(../images/fd_hover.gif) center top no-repeat;
+	color: #e1a11b;	
+}
+
+#fd span {
+	display: block;
+	padding-top: 30px;	
+}
+
+/************ menus ***************/
+#menus {	
+	position: absolute;
+	top: 420px;
+	left: 70px ;
+		
+}
+
+#menus h3 {
+	background: #f4f3ef url(../images/menu_h3_bg3.gif) 0 0 no-repeat;
+	color: #fff;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	font-size: 0.85em;
+	font-weight: bold;		
+}
+
+#menus ul li {
+	width: 200px;
+	border-bottom: 1px solid #ccc5ad;		
+}
+
+#menus a {
+	display: block;
+	text-decoration: none;
+	background-color: #e2e1cc;
+	width: 192px;
+	height: 28px;
+	color: #3a362e;	
+	padding-left: 8px;
+	line-height: 28px;
+	/*font-size: 0.95em;*/
+}
+
+#menus a:hover, #menus a:focus {
+	background-color: #f4f3dc;
+	color: #796743;
+}
+
+#passages {
+	margin-bottom: 20px;	
+}
+
+#pratiques {
+	margin-top: 20px;
+	margin-bottom: 20px;	
+}
+#achat {
+	width: 200px;
+	height: 180px;
+	background-color: #8f8763;		
+}
+
+#achat p {
+	font-size: 14px;
+	color: #f1e823;
+	text-align: left;
+	margin-top: 20px;
+	margin-left: 115px;
+	width: 200px;
+}
+
+#achat img {
+	float: left;	
+	padding-left: 8px;
+}
+
+#achat h3 {
+	background-color: #8f8763;
+	background-image: none;
+	color: #f1e823;
+	font-size: 1em;	
+}
+
+#achat a {
+	padding: 0;
+}
+
+#achat #prix {		
+		padding-top: 20px;
+		margin-bottom: -20px;
+		color: #fff;
+}
+
+#achat #prix2 {		
+		color: #fff;
+}
+
+/***** divers éléments ***/
+textarea {
+	width: 400px;
+	margin-right: -18px;
+	margin-bottom: 5px;
+	background-color: #f7f7f6;
+	font-family: sans-serif;
+	font-size: 14px;
+	color: #333;
+	padding: 7px;
+	border-left: 13px solid #c6a53e;
+	border-right: 13px solid #c6a53e;
+	border-bottom: 1px solid #ccc5ad;
+}
