@@ -46,9 +46,10 @@ class App {
       this.initComponents();
 
       // Register service worker (if in production)
-      if (import.meta.env.PROD) {
-        this.registerServiceWorker();
-      }
+      // Commented out until service worker is created
+      // if (import.meta.env.PROD) {
+      //   this.registerServiceWorker();
+      // }
 
       this.setState({ isLoading: false });
       console.log('Application initialized successfully');
