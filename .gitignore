@@ -27,3 +27,7 @@ build/
 # Environment files
 .env
 .env.local
+tree_rebuild.bat
+treemd.ps1
+directory_paths.md
+directory_tree.md
