@@ -1,7 +1,6 @@
 /**
  * Chapter Reading Page
  * Displays chapter content with navigation
- * Updated to handle relative paths for GitHub Pages deployment
  */
 
 import app from '../core/app.js';
@@ -65,7 +64,7 @@ function updateBreadcrumbs(book, chapter, lang) {
 
   if (breadcrumbBook) {
     breadcrumbBook.textContent = book.title[lang];
-    // CRITICAL FIX: Removed leading slash for GitHub Pages compatibility
+    // No leading slash for GitHub Pages compatibility
     breadcrumbBook.href = `book.html?id=${book.slug}`;
   }
 
@@ -90,30 +89,24 @@ async function renderChapter(book, chapter, lang) {
     // Load chapter content
     let content = await app.services.books.getChapterContent(chapter.contentFile);
 
-    // CRITICAL FIX: Use DOMParser to safely manipulate paths before injection
     const parser = new DOMParser();
     const doc = parser.parseFromString(content, 'text/html');
 
-    // 1. FIX IMAGE PATHS
-    // Converts "images/pic.jpg" -> "content/miataisrael/images/pic.jpg"
+    // --- FIX 1: IMAGE PATHS ---
     const images = doc.querySelectorAll('img');
     images.forEach(img => {
       const src = img.getAttribute('src');
-      // Only modify relative paths that aren't already fixed
       if (src && !src.startsWith('http') && !src.startsWith('/') && !src.startsWith('content/')) {
         img.setAttribute('src', `content/${book.id}/${src}`);
       }
     });
 
-    // 2. FIX AND INJECT LEGACY CSS
-    // Extracts <link> tags from the chapter and adds them to the main document head
+    // --- FIX 2: CSS FILES ---
     const styles = doc.querySelectorAll('link[rel="stylesheet"]');
     styles.forEach(link => {
       const href = link.getAttribute('href');
       if (href && !href.startsWith('http') && !href.startsWith('/')) {
         const newHref = `content/${book.id}/${href}`;
-        
-        // Prevent adding the same stylesheet multiple times
         if (!document.querySelector(`link[href*="${newHref}"]`)) {
           const newLink = document.createElement('link');
           newLink.rel = 'stylesheet';
@@ -124,34 +117,48 @@ async function renderChapter(book, chapter, lang) {
       }
     });
 
-    // 3. EXTRACT CONTENT BODY
-    // Try to find main content wrapper to avoid nested HTML/Body tags
+    // --- FIX 3: INTERNAL NAVIGATION LINKS (NEW) ---
+    // This looks for links like <a href="tanakh.html"> and converts them to
+    // <a href="chapter.html?book=miataisrael&chapter=tanakh">
+    const links = doc.querySelectorAll('a');
+    links.forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && !href.startsWith('http') && !href.startsWith('#')) {
+            // Check if it's a link to an HTML file
+            if (href.endsWith('.html')) {
+                // Extract the clean filename (e.g., "tanakh" from "tanakh.html")
+                const targetSlug = href.replace('.html', '');
+                
+                // Check if this slug exists in the book's chapters
+                const targetChapter = book.chapters.find(c => c.slug === targetSlug || c.id === targetSlug);
+
+                if (targetChapter) {
+                    // It is a chapter link -> Rewrite to SPA format
+                    a.setAttribute('href', `chapter.html?book=${book.slug}&chapter=${targetSlug}`);
+                } else if (targetSlug === 'index' || targetSlug === 'book') {
+                     // Link to book home
+                     a.setAttribute('href', `book.html?id=${book.slug}`);
+                } else if (['purchase', 'contact', 'about'].includes(targetSlug)) {
+                     // Link to static site pages
+                     a.setAttribute('href', `${targetSlug}.html`);
+                }
+            }
+        }
+    });
+
+    // Extract content
     let mainContent = doc.querySelector('.chapter-content') ||
                      doc.querySelector('#contenu') ||
                      doc.querySelector('article') ||
                      doc.querySelector('main') ||
                      doc.body;
 
-    // 4. CLEANUP
-    // Remove scripts and old navigation that might conflict
+    // Cleanup scripts and old navigation
     const scripts = mainContent.querySelectorAll('script');
     scripts.forEach(script => script.remove());
 
     const navElements = mainContent.querySelectorAll('#fleches, #entete, .nav, #header, #menus');
     navElements.forEach(nav => nav.remove());
-
-    // 5. UPDATE INTERNAL LINKS
-    // Fix links inside the text that might point to "mavo.html" directly
-    const links = mainContent.querySelectorAll('a');
-    links.forEach(a => {
-      const href = a.getAttribute('href');
-      if (href && !href.startsWith('http') && !href.startsWith('#')) {
-        // Just ensure they don't break, though ideally we'd map them to chapter.html?chapter=...
-        // For now, let's leave them if they are anchors, but if they point to .html files, 
-        // they likely need manual fixing in the source or complex logic here.
-        // Simple fix for now: ensure they don't have leading slash if they are relative
-      }
-    });
 
     content = mainContent.innerHTML;
 
@@ -159,8 +166,6 @@ async function renderChapter(book, chapter, lang) {
     const prevChapter = app.services.books.getPreviousChapter(book, chapter.slug);
     const nextChapter = app.services.books.getNextChapter(book, chapter.slug);
 
-    // Render the chapter
-    // CRITICAL FIX: Removed leading slashes from hrefs below
     container.innerHTML = `
       <div class="chapter-container">
         <header class="chapter-header">
