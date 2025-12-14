@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 // Main application logic and BookStore class
 class BookStore {
   constructor() {

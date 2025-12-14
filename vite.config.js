@@ -22,13 +22,8 @@ export default defineConfig({
         // Add other HTML pages when created
         // about: 'about.html',
         // contact: 'contact.html',
-      },
-      output: {
-        // Manual chunks for better caching
-        manualChunks: {
-          'vendor': ['whatwg-fetch']
-        }
       }
+     }
     },
 
     // CSS code splitting
