@@ -5,7 +5,7 @@
 
 export class BookService {
   constructor() {
-    this.baseUrl = '/src/data';
+    this.baseUrl = '/Geoulah-Books/data';
     this.cache = new Map();
     this.cacheExpiry = 5 * 60 * 1000; // 5 minutes
   }

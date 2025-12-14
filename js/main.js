@@ -16,7 +16,7 @@ class BookStore {
 
   async loadBooks() {
     try {
-      const response = await fetch('data/books.json');
+      const response = await fetch('/Geoulah-Books/data/books.json');
       const data = await response.json();
       this.books = data.books;
       console.log(`Loaded ${this.books.length} books`);
