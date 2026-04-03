@@ -133,21 +133,37 @@ p, blockquote {
 	background-color: transparent;
 }
 
+#langue {
+	text-align: left;
+	padding: 6px 0 4px 0;
+}
+
 #langue a {
-	position: absolute;
-	left: -150px;
-	/*padding-top:3px;*/
-	top: 0;
-	background: transparent url(../images/fr.png) left no-repeat;
-	height: 30px;
-	width: 90px;
+	display: inline-block;
+	background-color: #8f8763;
+	background-image: url(../images/fr.png);
+	background-repeat: no-repeat;
+	background-position: 8px center;
+	background-size: 22px auto;
+	color: #fff;
 	text-decoration: none;
-	color:#333;
+	font-family: sans-serif;
+	font-size: 0.9em;
+	font-weight: bold;
+	padding: 6px 14px 6px 38px;
+	border-radius: 4px;
+	border: 1px solid #6e6748;
+	letter-spacing: 0.03em;
+	transition: background-color 0.2s;
+}
+
+#langue a:hover, #langue a:focus {
+	background-color: #6e6748;
+	color: #f1e823;
 }
 
 #langue a span {
-	margin-top: 4px;
-	display: block;
+	display: inline;
 }
 
 #langue a span span {
