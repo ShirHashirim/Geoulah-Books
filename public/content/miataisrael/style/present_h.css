@@ -133,7 +133,6 @@ p, blockquote {
 	background-color: transparent;
 }
 
-<<<<<<< HEAD
 #langue {
 	text-align: left;
 	padding: 8px 0 6px 0;
@@ -161,23 +160,6 @@ p, blockquote {
 
 .btn-french span {
 	display: inline;
-=======
-#langue a {
-	position: absolute;
-	left: -150px;
-	/*padding-top:3px;*/
-	top: 0;
-	background: transparent url(../images/fr.png) left no-repeat;
-	height: 30px;
-	width: 90px;
-	text-decoration: none;
-	color:#333;
-}
-
-#langue a span {
-	margin-top: 4px;
-	display: block;
->>>>>>> parent of 3896f9f (Update site)
 }
 
 /**** contenu ***/
